@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>2-3 Express Practice</title>
+</head>
+<body>
+
+  {{!-- navigation --}}
+  <nav class="navbar">
+    <button type="button" onclick="self.location.href='/'">回到首頁</button>
+    
+    <div class="tools-wrapper">
+      <button type="button" onclick="self.location.href='/about'" class="{{#if about}}active{{/if}}">About</button>
+      <button type="button" onclick="self.location.href='/portfolio'" class="{{#if portfolio}}active{{/if}}">Portfolio</button>
+      <button type="button" onclick="self.location.href='/contact'" class="{{#if contact}}active{{/if}}">Contact</button>
+    </div>
+  </nav>
+
+  {{!-- partial template --}}
+  {{{body}}}
+  
+</body>
+</html>

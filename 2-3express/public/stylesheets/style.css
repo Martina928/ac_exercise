@@ -1,0 +1,33 @@
+html,
+body {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+}
+
+button {
+  all: unset;
+  width: 80px;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+  background-color: #CCCCCC;
+}
+
+.active {
+  color: white;
+  background-color: #424243; 
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
