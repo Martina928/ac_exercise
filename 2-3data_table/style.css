@@ -1,0 +1,297 @@
+/*reset */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+table {
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: initial;
+}
+
+/*reset end*/
+
+/* global */
+:root {
+  --main-dark: #03396a;
+  --grey-1: #e4e4e4;
+  --background-grey: #f3f3f3;
+  --main-color: #ff6500;
+  --border-color: #e4e4e4;
+  --zebra-color: #e9e9e9;
+  --header-color: #cdcdcd;
+  --table-grey-text: #828282;
+  --white: white;
+  --main-text-color: black;
+  --header-text-color: black;
+  --table-background-color: #ffffff;
+  --logo-url: url("https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo.svg");
+  --darkmode-toggle-url: url("https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/darkmode-on.svg");
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --main-dark: #3a3a3a;
+  --grey-1: #e4e4e4;
+  --background-grey: #202020;
+  --main-color: transparent;
+  --border-color: #e4e4e4;
+  --zebra-color: #575757;
+  --header-color: #2e2e2e;
+  --table-grey-text: rgba(255, 255, 255, 37%);
+  --white: white;
+  --main-text-color: white;
+  --header-text-color: #aaaaaa;
+  --table-background-color: #3a3a3a;
+  --logo-url: url("https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo-dark.svg");
+  --darkmode-toggle-url: url("https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/darkmode-off.svg");
+}
+
+html {
+  font-size: 14px;
+  height: 100%;
+  color: var(--main-text-color);
+}
+
+/* global end */
+
+body {
+  display: flex;
+  height: 100%;
+  min-height: 480px;
+  background-color: var(--background-grey);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  background: var(--main-dark);
+  padding-top: 30px;
+}
+
+.main {
+  flex: 1;
+  padding: 42px 50px 68px 50px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.main__title {
+  margin-bottom: 34px;
+  font-size: 48px;
+}
+
+/* add scroll bar here */
+.main__container {
+  width: 100%;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.main__table {
+  background: var(--table-background-color);
+}
+
+/* Table */
+.table__header {
+  /* sticky the header on the top */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  background: var(--header-color);
+  color: var(--header-text-color);
+}
+
+.table__row {
+  height: 50px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* add zebra color every other row */
+.table__row:nth-child(even) {
+  background: var(--zebra-color);
+}
+
+/* add hover effect */
+.table__row:hover {
+  background: var(--grey-1);
+  font-weight: 700;
+  font-size: 15px;
+  transition: background 0.1s ease-out, font-weight 0.1s ease-out, font-size 0.1s ease-out;
+}
+
+/* toggle background color */
+.table__body .checked {
+  background: var(--main-color);
+}
+
+.table__cell {
+  text-align: center;
+}
+
+.table__cell--checkbox {
+  width: 50px;
+}
+
+.table__cell--id {
+  width: 80px;
+}
+
+.table__cell--name {
+  width: 140px;
+}
+
+.table__cell--advertiser {
+  width: 140px;
+}
+
+.cell__advertiser__line {
+  display: block;
+}
+
+.cell__advertiser__line--group {
+  color: var(--table-grey-text);
+}
+
+.table__cell--description {
+  width: 200px;
+}
+
+.table__cell--price {
+  position: relative;
+  width: 140px;
+}
+
+.table__cell--starttime {
+  position: relative;
+  width: 140px;
+}
+
+.table__cell--endtime {
+  position: relative;
+  width: 140px;
+}
+
+.table__cell--action {
+  position: relative;
+  width: 210px;
+}
+
+.cell__action__icon {
+  cursor: pointer;
+}
+
+.header__cell__icon {
+  cursor: pointer;
+}
+
+.header__cell__icon--right {
+  position: absolute;
+  right: 0;
+}
+
+/* Menu */
+.action__menu {
+  z-index: 999;
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  width: 140px;
+  height: 120px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+}
+
+.menu__body {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+}
+
+.menu__item__icon {
+  margin-right: 14px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Sidebar */
+.sidebar__home {
+  height: 64px;
+  background: var(--logo-url);
+  background-size: 100% 100%;
+  margin-bottom: 83px;
+  cursor: pointer;
+}
+
+.sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar__menu > div:not(:last-child) {
+  margin-bottom: 55px;
+}
+
+.sidebar__menu__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.sidebar__menu__link--active {
+  background: var(--white);
+}
+
+/* Dark mode */
+.sidebar__darkmode__label {
+  width: 100%;
+  height: 100%;
+  background: var(--darkmode-toggle-url);
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.sidebar__darkmode__input {
+  display: none;
+}
