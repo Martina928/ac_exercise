@@ -26,5 +26,5 @@ app.post('/', (req, res) => {
 
 // starts the express server and listening for connections
 app.listen(port, () => {
-  console.log(`Express app listening on http://localhost:${port}`)
+  console.log(`Password generator is listening on http://localhost:${port}`)
 })
